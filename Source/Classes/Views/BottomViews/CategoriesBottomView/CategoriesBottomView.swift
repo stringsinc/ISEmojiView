@@ -32,6 +32,14 @@ final internal class CategoriesBottomView: UIView {
             collectionViewToSuperViewLeadingConstraint.priority = showAbcButton ? .defaultHigh : .defaultLow
         }
     }
+
+    internal var needToShowDeleteButton: Bool = true {
+        didSet {
+            deleteButton.isHidden = !needToShowDeleteButton
+            deleteButtonHiddenConstraint.isActive = !needToShowDeleteButton
+            layoutIfNeeded()
+        }
+    }
     
     internal var categories: [Category]! {
         didSet {
@@ -47,6 +55,8 @@ final internal class CategoriesBottomView: UIView {
     
     @IBOutlet private weak var changeKeyboardButton: UIButton!
     
+    @IBOutlet private var deleteButton: UIButton!
+
     @IBOutlet private weak var collectionView: UICollectionView! {
         didSet {
             collectionView.register(CategoryCell.self, forCellWithReuseIdentifier: "CategoryCell")
@@ -55,9 +65,12 @@ final internal class CategoriesBottomView: UIView {
     
     @IBOutlet private var collectionViewToSuperViewLeadingConstraint: NSLayoutConstraint!
     
+    @IBOutlet private var deleteButtonHiddenConstraint: NSLayoutConstraint!
     // MARK: - Init functions
     
-    static internal func loadFromNib(with categories: [Category], needToShowAbcButton: Bool) -> CategoriesBottomView {
+    static internal func loadFromNib(with categories: [Category],
+                                     needToShowAbcButton: Bool,
+                                     needToShowDeleteButton: Bool) -> CategoriesBottomView {
         let nibName = String(describing: CategoriesBottomView.self)
         
         guard let nib = Bundle.podBundle.loadNibNamed(nibName, owner: nil, options: nil) as? [CategoriesBottomView] else {
@@ -74,6 +87,8 @@ final internal class CategoriesBottomView: UIView {
         if needToShowAbcButton {
             bottomView.collectionViewToSuperViewLeadingConstraint.priority = .defaultHigh
         }
+
+        bottomView.needToShowDeleteButton = needToShowDeleteButton
         
         bottomView.selectFirstCell()
         

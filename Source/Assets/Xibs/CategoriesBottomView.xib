@@ -45,8 +45,16 @@
                 </collectionView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tf8-um-STV">
                     <rect key="frame" x="324" y="0.0" width="40" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="width" id="HHo-BW-SGJ"/>
+                    </constraints>
                     <inset key="contentEdgeInsets" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
                     <state key="normal" image="ic_emojiDelete.png"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="HHo-BW-SGJ"/>
+                        </mask>
+                    </variation>
                     <connections>
                         <action selector="deleteBackward" destination="f88-xx-Pa0" eventType="touchUpInside" id="gi2-jZ-BOM"/>
                     </connections>
@@ -71,6 +79,8 @@
                 <outlet property="changeKeyboardButton" destination="knY-pK-n7O" id="mWZ-mL-hfS"/>
                 <outlet property="collectionView" destination="Ymf-rC-qWc" id="yKv-xM-c7E"/>
                 <outlet property="collectionViewToSuperViewLeadingConstraint" destination="JuT-Ya-x8H" id="6Tp-mK-lpt"/>
+                <outlet property="deleteButton" destination="Tf8-um-STV" id="VYk-ec-3lK"/>
+                <outlet property="deleteButtonHiddenConstraint" destination="HHo-BW-SGJ" id="Hil-jH-bFm"/>
             </connections>
             <point key="canvasLocation" x="33.5" y="54"/>
         </view>

@@ -71,6 +71,12 @@ final public class EmojiView: UIView {
             categoriesBottomView?.needToShowAbcButton = needToShowAbcButton
         }
     }
+
+    @IBInspectable private var needToShowDeleteButton: Bool = false {
+        didSet {
+            categoriesBottomView?.needToShowDeleteButton = needToShowDeleteButton
+        }
+    }
     
     // MARK: - Public variables
     
@@ -260,9 +266,11 @@ extension EmojiView {
             _bottomView = bottomView
         } else if bottomType == .categories {
             let needToShowAbcButton = keyboardSettings?.needToShowAbcButton ?? self.needToShowAbcButton
+            let needToShowDeleteButton = keyboardSettings?.needToShowDeleteButton ?? self.needToShowDeleteButton
             let bottomView = CategoriesBottomView.loadFromNib(
                 with: categories,
-                needToShowAbcButton: needToShowAbcButton
+                needToShowAbcButton: needToShowAbcButton,
+                needToShowDeleteButton: needToShowDeleteButton
             )
             bottomView.delegate = self
             self.categoriesBottomView = bottomView

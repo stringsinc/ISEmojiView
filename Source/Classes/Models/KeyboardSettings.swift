@@ -27,7 +27,11 @@ final public class KeyboardSettings {
     /// This button is located in `Categories` bottom view.
     /// Default is false.
     public var needToShowAbcButton: Bool = false
-    
+
+    /// Button located in categories view
+    /// Deletes last character
+    /// Default is true
+    public var needToShowDeleteButton: Bool = true
     // MARK: - Init functions
     
     public init(bottomType: BottomType) {
