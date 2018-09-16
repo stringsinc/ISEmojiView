@@ -67,7 +67,7 @@ internal class EmojiCollectionView: UIView {
     // MARK: - Override variables
     
     internal override var intrinsicContentSize: CGSize {
-        return CGSize(width: UIViewNoIntrinsicMetric, height: frame.size.height)
+		return CGSize(width: UIView.noIntrinsicMetric, height: frame.size.height)
     }
     
     // MARK: - Init functions
@@ -255,7 +255,7 @@ extension EmojiCollectionView {
     
     @objc private func emojiLongPressHandle(sender: UILongPressGestureRecognizer) {
         func longPressLocationInEdge(_ location: CGPoint) -> Bool {
-            let edgeRect = UIEdgeInsetsInsetRect(collectionView.bounds, collectionView.contentInset)
+            let edgeRect = collectionView.bounds.inset(by: collectionView.contentInset)
             return edgeRect.contains(location)
         }
         

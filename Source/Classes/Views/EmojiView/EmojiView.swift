@@ -290,7 +290,7 @@ extension EmojiView {
         addConstraints(
             NSLayoutConstraint.constraints(
                 withVisualFormat: "H:|-0-[bottomView]-0-|",
-                options: NSLayoutFormatOptions(rawValue: 0),
+                options: NSLayoutConstraint.FormatOptions(rawValue: 0),
                 metrics: nil,
                 views: views
             )
@@ -299,7 +299,7 @@ extension EmojiView {
         addConstraints(
             NSLayoutConstraint.constraints(
                 withVisualFormat: "V:|-0-[bottomView]-0-|",
-                options: NSLayoutFormatOptions(rawValue: 0),
+				options: NSLayoutConstraint.FormatOptions(rawValue: 0),
                 metrics: nil,
                 views: views
             )
@@ -319,7 +319,7 @@ extension EmojiView {
         addConstraints(
             NSLayoutConstraint.constraints(
                 withVisualFormat: "H:|-0-[emojiCollectionView]-0-|",
-                options: NSLayoutFormatOptions(rawValue: 0),
+				options: NSLayoutConstraint.FormatOptions(rawValue: 0),
                 metrics: nil,
                 views: views
             )
@@ -328,7 +328,7 @@ extension EmojiView {
         addConstraints(
             NSLayoutConstraint.constraints(
                 withVisualFormat: "H:|-0-[bottomContainerView]-0-|",
-                options: NSLayoutFormatOptions(rawValue: 0),
+				options: NSLayoutConstraint.FormatOptions(rawValue: 0),
                 metrics: nil,
                 views: views
             )
@@ -337,7 +337,7 @@ extension EmojiView {
         addConstraints(
             NSLayoutConstraint.constraints(
                 withVisualFormat: "V:|-5-[emojiCollectionView]-(0)-[bottomContainerView(44)]",
-                options: NSLayoutFormatOptions(rawValue: 0),
+				options: NSLayoutConstraint.FormatOptions(rawValue: 0),
                 metrics: nil,
                 views: views
             )
